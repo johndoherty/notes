@@ -1,1 +1,3 @@
-directory: "~/Dropbox/notes"
+# Welcome to notes!
+# This file contains configurations that the app will use
+directory: "~/Dropbox/notes" # Directory where we will store notes
