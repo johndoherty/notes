@@ -30,7 +30,7 @@ def compile_markdown(markdown_path, html_path):
 
 
 def postprocess(notename, html):
-    p = parse(html)
+    p = markup_parser.parse(html)
     if "reminders" in p:
         reminders.save()
 

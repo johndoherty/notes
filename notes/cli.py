@@ -1,3 +1,8 @@
+"""
+Some of the structure here is borrowed from the vatic video annotation tool:
+https://github.com/cvondrick/vatic
+"""
+
 import os
 import sys
 import reminders
@@ -48,12 +53,18 @@ def help(args = None):
 
 @handler(help = "display sample note text")
 def sample(args = None):
+    """
+    Print a sample note for reference.
+    """
     with open("sample.md", "r") as sample_note:
         print sample_note.readlines()
 
 
 @handler(help = "view an existing note")
 def view(args = None):
+    """
+    View a note in the browser.
+    """
     parser = argparse.ArgumentParser(description='Create a new note')
     parser.add_argument('filename', help='filename to view')
     args = parser.parse_args(args)
@@ -62,6 +73,9 @@ def view(args = None):
 
 @handler(help = "create a new note")
 def new(args = None):
+    """
+    Create a new note.
+    """
     parser = argparse.ArgumentParser(description='Create a new note')
     parser.add_argument('--title', help='title for the new note')
     parser.add_argument('--no-edit', action='store_true', help='optional filename for the new note')
