@@ -2,6 +2,7 @@ import os
 import sys
 import reminders
 import argparse
+import markdown
 
 import notes
 

@@ -3,3 +3,4 @@ config.py
 build
 dist
 notes.egg-info
+#.pyc
