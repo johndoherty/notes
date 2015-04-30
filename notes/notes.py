@@ -3,6 +3,8 @@ import re
 import os
 import subprocess
 import config
+import markdown
+import webbrowser
 
 import markup_parser
 
@@ -24,8 +26,7 @@ def time_as_filename():
 
 
 def compile_markdown(markdown_path, html_path):
-    with open(html_path, "w") as outfile:
-        subprocess.call(["markdown", markdown_path], stdout=outfile)
+    markdown.markdownFromFile(input=markdown_path, output=html_path)
     return "Compiled markdown"
 
 
@@ -41,8 +42,7 @@ def view_file(filename):
         tmp_path = os.path.join("/", "tmp", time_as_filename() + ".html")
         compile_markdown(filename, tmp_path)
         filename = tmp_path
-
-    subprocess.call(["open", filename])
+        webbrowser.open(filename, new=1)
 
 
 def edit(filename):
