@@ -19,6 +19,7 @@ def get_header(title):
     header += "\n\n"
     return header
 
+
 def time_as_filename():
     now = datetime.datetime.now()
     filename = now.replace(microsecond=0).isoformat()
@@ -26,8 +27,8 @@ def time_as_filename():
 
 
 def compile_markdown(markdown_path, html_path):
+    print "Compiling markdown"
     markdown.markdownFromFile(input=markdown_path, output=html_path)
-    return "Compiled markdown"
 
 
 def postprocess(notename, html):
@@ -42,7 +43,8 @@ def view_file(filename):
         tmp_path = os.path.join("/", "tmp", time_as_filename() + ".html")
         compile_markdown(filename, tmp_path)
         filename = tmp_path
-        webbrowser.open(filename, new=1)
+        print filename
+        webbrowser.open(filename)
 
 
 def edit(filename):
