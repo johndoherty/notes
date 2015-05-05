@@ -9,7 +9,7 @@ import webbrowser
 import markup_parser
 
 def title_to_filename(title, ext):
-    return title.replace(" ", "_") + ext
+    return title.lower().replace(" ", "_") + ext
 
 def get_header(title):
     header = config.header.strip()
