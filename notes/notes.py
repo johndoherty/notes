@@ -64,7 +64,7 @@ def view_file(filename):
     _, ext = os.path.splitext(filename)
     if ext == ".md":
         tmp_path = get_tmp_file(".html")
-        compile_markdown(filename, tmp_path)
+        compile_markdown_html(filename, tmp_path)
         filename = tmp_path
         print filename
         webbrowser.open(filename)
