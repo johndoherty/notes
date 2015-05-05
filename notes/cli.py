@@ -72,6 +72,19 @@ def view(args = None):
     notes.view_file(args.filename)
 
 
+@handler(help = "convert note to pdf")
+def pdf(args = None):
+    """
+    Create pdf.
+    """
+    parser = argparse.ArgumentParser(description='Create a pdf')
+    parser.add_argument('markdown', help='location of markdown')
+    parser.add_argument('pdf', help='location to store pdf')
+    args = parser.parse_args(args)
+
+    notes.compile_markdown_pdf(args.markdown, args.pdf)
+
+
 @handler(help = "create a new note")
 def new(args = None):
     """

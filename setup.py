@@ -10,5 +10,5 @@ setup(
     packages = ["notes"],
     scripts = ['scripts/notes'],
     package_dir = {"notes": "notes"},
-    install_requires = ["setuptools", "markdown"]
+    install_requires = ["setuptools", "markdown", "xhtml2pdf"]
 )
